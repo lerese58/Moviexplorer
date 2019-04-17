@@ -48,7 +48,7 @@
                                                       <Font name="Arial" size="18.0" />
                                                    </font>
                                                 </Label>
-                                                <ImageView fx:id="film1" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <ImageView fx:id="view1" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <image>
                                                       <Image url="@../../resources/defaultIcons/Film-icon.png" />
                                                    </image>
@@ -65,7 +65,7 @@
                                                       <Font name="Arial" size="18.0" />
                                                    </font>
                                                 </Label>
-                                                <ImageView fx:id="film2" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <ImageView fx:id="view2" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <image>
                                                       <Image url="@../../resources/defaultIcons/Film-icon.png" />
                                                    </image>
@@ -82,7 +82,7 @@
                                                       <Font name="Arial" size="18.0" />
                                                    </font>
                                                 </Label>
-                                                <ImageView fx:id="film3" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <ImageView fx:id="view3" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <image>
                                                       <Image url="@../../resources/defaultIcons/Film-icon.png" />
                                                    </image>
@@ -99,7 +99,7 @@
                                                       <Font name="Arial" size="18.0" />
                                                    </font>
                                                 </Label>
-                                                <ImageView fx:id="film4" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <ImageView fx:id="view4" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <image>
                                                       <Image url="@../../resources/defaultIcons/Film-icon.png" />
                                                    </image>
@@ -116,7 +116,7 @@
                                                       <Font name="Arial" size="18.0" />
                                                    </font>
                                                 </Label>
-                                                <ImageView fx:id="film5" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <ImageView fx:id="view5" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <image>
                                                       <Image url="@../../resources/defaultIcons/Film-icon.png" />
                                                    </image>

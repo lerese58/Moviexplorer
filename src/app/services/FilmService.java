@@ -1,6 +1,6 @@
 package app.services;
 
-import app.dao.FilmRepo;
+import app.dao.repositories.FilmRepo;
 import app.entities.Film;
 
 import java.util.List;
@@ -11,7 +11,7 @@ public class FilmService implements Service<Film> {
 
     @Override
     public List<Film> getAll() {
-        return null;
+        return _filmRepository.getAll();
     }
 
     @Override

@@ -1,33 +1,34 @@
 package app.entities;
 
-public class Review {
+import java.util.ArrayList;
+import java.util.List;
+
+public class FilmCollection {
 
     private final Long authorID;
-    private String text;
-    private final Long filmID;
+    private String title;
+    private List<Film> films;
     private int likes;
     private int dislikes;
-    private int rate;
 
-    public Review(Long authorID, String text, Long filmID, int rate) {
+    public FilmCollection(Long authorID, String title) {
         this.authorID = authorID;
-        this.text = text;
-        this.filmID = filmID;
+        this.title = title;
+        this.films = new ArrayList<>();
         this.likes = 0;
         this.dislikes = 0;
-        this.rate = rate;
     }
 
     public Long getAuthorID() {
         return authorID;
     }
 
-    public String getText() {
-        return text;
+    public String getTitle() {
+        return title;
     }
 
-    public Long getFilmID() {
-        return filmID;
+    public List<Film> getFilms() {
+        return films;
     }
 
     public int getLikes() {
@@ -38,14 +39,9 @@ public class Review {
         return dislikes;
     }
 
-    public int getRate() {
-        return rate;
-    }
-
     public void likeThis() {
         likes++;
     }
-
     public void dislikeThis() {
         dislikes++;
     }

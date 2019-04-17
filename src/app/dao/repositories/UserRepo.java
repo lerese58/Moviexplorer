@@ -1,11 +1,14 @@
-package app.dao;
+package app.dao.repositories;
 
+import app.dao.repositories.Repository;
 import app.entities.User;
+
+import java.util.List;
 
 public class UserRepo implements Repository<User> {
     @Override
     public boolean create(User obj) {
-        return false;
+        return true;
     }
 
     @Override
@@ -21,5 +24,10 @@ public class UserRepo implements Repository<User> {
     @Override
     public boolean update(long id, User obj) {
         return false;
+    }
+
+    @Override
+    public List<User> getAll() {
+        return null;
     }
 }

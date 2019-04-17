@@ -3,12 +3,17 @@ package app.gui;
 import app.entities.Film;
 import app.entities.Person;
 import app.entities.User;
+import javafx.scene.image.ImageView;
+
+import java.util.List;
+import java.util.Map;
 
 public class Context {
     private User currentUser;
     private Film selectedFilm;
     private Person selectedPerson;
     private static volatile Context instance;
+    private List<Film> rndFilms;
 
     private Context() {
 
@@ -49,5 +54,13 @@ public class Context {
 
     public void setSelectedPerson(Person selectedPerson) {
         this.selectedPerson = selectedPerson;
+    }
+
+    public List<Film> getRndFilms() {
+        return rndFilms;
+    }
+
+    public void setRndFilms(List<Film> rndFilms) {
+        this.rndFilms = rndFilms;
     }
 }

@@ -24,7 +24,7 @@ public class AdvConnection {
     private AdvConnection() {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = DriverManager.getConnection("jdbc:sqlite:/Users/pavelchizhov/data/moviexp.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:C:/Универ/sem4/Analysis & Design of UML/moviexplorer/moviexp.db");
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

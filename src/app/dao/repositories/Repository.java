@@ -1,8 +1,10 @@
-package app.dao;
+package app.dao.repositories;
+
+import java.util.List;
 
 public interface Repository<T> {
 
-    //typical CRUD
+    //typical CRUD + getAll()
 
     boolean create(T obj);
 
@@ -11,5 +13,7 @@ public interface Repository<T> {
     boolean delete(T obj);
 
     boolean update(long id, T obj);
+
+    List<T> getAll();
 
 }

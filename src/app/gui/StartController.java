@@ -1,9 +1,8 @@
 package app.gui;
 
+import app.dao.SearchEngine;
 import app.entities.Film;
-import app.enums.Genre;
-import app.enums.MovieType;
-import app.enums.RatingMPAA;
+import app.gui.Context;
 import app.services.FilmService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,13 +15,9 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -35,50 +30,51 @@ public class StartController {
     @FXML
     ScrollPane scrollPane;
     @FXML
-    ImageView film1, film2, film3, film4, film5;
+    ImageView view1, view2, view3, view4, view5;
     @FXML
     Label filmName1, filmName2, filmName3, filmName4, filmName5;
 
+    ImageView[] listOfImg = new ImageView[]{view1,view2,view3,view4,view5};
+
     private Stage infoStage;
     private Context currentContext;
+    private SearchEngine se;
     private FilmService _filmService = new FilmService();
     private ExecutorService _executorService = Executors.newSingleThreadExecutor(Thread::new);
-    private Map<Label, ImageView> films;
+    private Map<Label, ImageView> filmNames = new HashMap<>();
+    private Map<Film, ImageView> filmViews = new HashMap<>();
     private final String filmDir = "C:\\Универ\\sem4\\Analysis & Design of UML\\moviexplorer\\src\\resources\\filmPics\\";
     private final String relativeFilmDir = "resources/filmPics/";
     private final Random rnd = new Random();
 
-    public StartController() throws IOException {
+    public StartController() {
         currentContext = Context.getInstance();
+        se = new SearchEngine();
     }
 
     @FXML
     private void initialize() {
-        films = Map.of(filmName1, film1, filmName2, film2, filmName3, film3, filmName4, film4, filmName5, film5);
-        String[] paths = new File(filmDir).list();
-        if (paths == null)
-            return;
-        int[] indexes = rnd.ints(100, 0, paths.length).distinct().limit(films.size()).toArray();
-        int i = 0;
-        for (Map.Entry<Label, ImageView> entry : films.entrySet()) {
-            Label label = entry.getKey();
-            ImageView imageView = entry.getValue();
-            int index = indexes[i++];
-            imageView.setOnMousePressed(event -> {
-                if (event.getClickCount() == 2) {
-                    openInfoDialog(new Film(1, "Sex on friendship", MovieType.FULL_LENGTH, 112, Set.of(Genre.COMEDY, Genre.DRAMA), Map.of(),
-                            LocalDate.of(2016, 5, 5), "Russia", BigDecimal.valueOf(1000000L), BigDecimal.valueOf(2000000L), RatingMPAA.R,
-                            4.5f, film1));
-                }
-            });
-            imageView.setOnMouseEntered(event -> imageView.setCursor(Cursor.HAND));
-            imageView.setImage(new Image((relativeFilmDir + paths[index])));
-            String url = imageView.getImage().getUrl();
-            imageView.setId(url.substring(url.lastIndexOf("/") + 1, url.indexOf(".jpg")).replace("%20", " "));
-            label.setText(imageView.getId());
-            label.setTextFill(Paint.valueOf("#FFFFFF"));
-            imageView.setOnMousePressed(event -> searchField.setText(imageView.getId()));
-        }
+        //generate 5 random films for start view
+        List<Film> allFilms = _filmService.getAll();
+//        int[] indexes = rnd.ints(allFilms.size(), 0, allFilms.size()).distinct().limit(5).toArray();
+//        for (int i : indexes) rndFilms.put(allFilms.get(i), listOfImg[i]);
+        view1.setImage(new Image(relativeFilmDir + allFilms.get(0).getTitle() + ".jpg"));
+        view2.setImage(new Image(relativeFilmDir + allFilms.get(1).getTitle() + ".jpg"));
+        view3.setImage(new Image(relativeFilmDir + allFilms.get(2).getTitle() + ".jpg"));
+        view4.setImage(new Image(relativeFilmDir + allFilms.get(3).getTitle() + ".jpg"));
+        view5.setImage(new Image(relativeFilmDir + allFilms.get(4).getTitle() + ".jpg"));
+        currentContext.setRndFilms(allFilms);
+        allFilms.get(0).setPic(view1);
+        allFilms.get(1).setPic(view2);
+        allFilms.get(2).setPic(view3);
+        allFilms.get(3).setPic(view4);
+        allFilms.get(4).setPic(view5);
+
+        allFilms.forEach(film -> {
+            film.getPic().setOnMousePressed(event -> openInfoDialog(film));
+            film.getPic().setOnMouseEntered(event -> film.getPic().setCursor(Cursor.HAND));
+        });
+
         //tunes ScrollPane's behavior
         _executorService.execute(() -> {
             try {
@@ -98,18 +94,13 @@ public class StartController {
         });
     }
 
-    public List<Film> doSearch() {
-        openInfoDialog(
-                new Film(1, "Billion", MovieType.FULL_LENGTH, 112, Set.of(Genre.COMEDY, Genre.DRAMA), Map.of(),
-                        LocalDate.of(2016, 5, 5), "Russia", BigDecimal.valueOf(1000000L), BigDecimal.valueOf(2000000L), RatingMPAA.R,
-                        4.5f, film1));
-        return Collections.emptyList();
-//        String ptrn = searchField.getText();
-//        if (searchValidate(ptrn)) {
-//            searchField.setText("found!");
-//            return _filmService.getByName(ptrn);
-//        }
-//        return Collections.emptyList();
+    public void doSearch() {
+        List<Film> res = new ArrayList<>();
+        if (searchValidate(searchField.getText())) {
+            se.search(searchField.getText());
+            for (Long id : se.getFilms()) res.add(_filmService.getById(id));
+        }
+        res.forEach(film -> System.out.println(film.getTitle()));
     }
 
     public void openInfoDialog(Film film) {

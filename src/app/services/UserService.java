@@ -1,6 +1,6 @@
 package app.services;
 
-import app.dao.UserRepo;
+import app.dao.repositories.UserRepo;
 import app.entities.User;
 
 import java.util.List;
