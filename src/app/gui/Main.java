@@ -16,7 +16,10 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("start.fxml"));
         primaryStage.setTitle("Moviexplorer");
-        primaryStage.setScene(new Scene(root, 896, 504));
+        primaryStage.setScene(new Scene(root, 800, 540));
+        primaryStage.setMinWidth(640);
+        primaryStage.setMinHeight(400);
+        primaryStage.setOnCloseRequest(event -> System.exit(0));
         primaryStage.show();
     }
 }
