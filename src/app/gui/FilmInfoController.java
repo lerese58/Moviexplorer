@@ -7,31 +7,20 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
 public class FilmInfoController {
-//    @FXML
-//    WebView webView;
+    @FXML
+    WebView webView;
     WebEngine _webEngine;
     @FXML
     ImageView filmPic;
 
-    Film _film;
-
-    public Film getFilm() {
-        return _film;
-    }
-
-    public void setFilm(Film film) {
-        _film = film;
-    }
+    Context _context = Context.getInstance();
 
     @FXML
     private void initialize() {
-//        _webEngine = webView.getEngine();
         String html = String.format("<html>" +
-                "<h1>%s</h1>" +
-                "<h2>%s</h2>" +
-                "<tr>%s</tr>" +
-                "</html>", _film.getTitle(), _film.getRating(), _film.getDurationInMinutes());
+                "<h1>%s</h1>"+
+                "</html>", _context.getSelectedFilm().getTitle());
+        _webEngine = webView.getEngine();
         _webEngine.loadContent(html);
-        filmPic.setImage(_film.getPic().getImage());
     }
 }

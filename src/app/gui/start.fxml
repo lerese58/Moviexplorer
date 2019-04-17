@@ -43,16 +43,16 @@
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                              </HBox.margin>
                                              <children>
-                                                <ImageView fx:id="film1" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                   <image>
-                                                      <Image url="@../../resources/defaultIcons/Film-icon.png" />
-                                                   </image>
-                                                </ImageView>
                                                 <Label fx:id="filmName1" alignment="BOTTOM_CENTER" text="&lt;FilmName1&gt;" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                                    <font>
                                                       <Font name="Arial" size="18.0" />
                                                    </font>
                                                 </Label>
+                                                <ImageView fx:id="film1" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <image>
+                                                      <Image url="@../../resources/defaultIcons/Film-icon.png" />
+                                                   </image>
+                                                </ImageView>
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane HBox.hgrow="ALWAYS">
@@ -60,16 +60,16 @@
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                              </HBox.margin>
                                              <children>
-                                                <ImageView fx:id="film2" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                   <image>
-                                                      <Image url="@../../resources/defaultIcons/Film-icon.png" />
-                                                   </image>
-                                                </ImageView>
                                                 <Label fx:id="filmName2" alignment="BOTTOM_CENTER" text="&lt;FilmName2&gt;" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                                    <font>
                                                       <Font name="Arial" size="18.0" />
                                                    </font>
                                                 </Label>
+                                                <ImageView fx:id="film2" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <image>
+                                                      <Image url="@../../resources/defaultIcons/Film-icon.png" />
+                                                   </image>
+                                                </ImageView>
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane HBox.hgrow="ALWAYS">
@@ -77,16 +77,16 @@
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                              </HBox.margin>
                                              <children>
-                                                <ImageView fx:id="film3" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                   <image>
-                                                      <Image url="@../../resources/defaultIcons/Film-icon.png" />
-                                                   </image>
-                                                </ImageView>
                                                 <Label fx:id="filmName3" alignment="BOTTOM_CENTER" text="&lt;FilmName3&gt;" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                                    <font>
                                                       <Font name="Arial" size="18.0" />
                                                    </font>
                                                 </Label>
+                                                <ImageView fx:id="film3" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <image>
+                                                      <Image url="@../../resources/defaultIcons/Film-icon.png" />
+                                                   </image>
+                                                </ImageView>
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane HBox.hgrow="ALWAYS">
@@ -94,16 +94,16 @@
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                              </HBox.margin>
                                              <children>
-                                                <ImageView fx:id="film4" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                   <image>
-                                                      <Image url="@../../resources/defaultIcons/Film-icon.png" />
-                                                   </image>
-                                                </ImageView>
                                                 <Label fx:id="filmName4" alignment="BOTTOM_CENTER" text="&lt;FilmName4&gt;" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                                    <font>
                                                       <Font name="Arial" size="18.0" />
                                                    </font>
                                                 </Label>
+                                                <ImageView fx:id="film4" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <image>
+                                                      <Image url="@../../resources/defaultIcons/Film-icon.png" />
+                                                   </image>
+                                                </ImageView>
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane HBox.hgrow="ALWAYS">
@@ -111,16 +111,16 @@
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                              </HBox.margin>
                                              <children>
-                                                <ImageView fx:id="film5" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                   <image>
-                                                      <Image url="@../../resources/defaultIcons/Film-icon.png" />
-                                                   </image>
-                                                </ImageView>
                                                 <Label fx:id="filmName5" alignment="BOTTOM_CENTER" text="&lt;FilmName5&gt;" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                                    <font>
                                                       <Font name="Arial" size="18.0" />
                                                    </font>
                                                 </Label>
+                                                <ImageView fx:id="film5" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <image>
+                                                      <Image url="@../../resources/defaultIcons/Film-icon.png" />
+                                                   </image>
+                                                </ImageView>
                                              </children>
                                           </AnchorPane>
                                        </children>
