@@ -71,13 +71,11 @@ public class Person {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Person{");
-        sb.append("ID=").append(personID);
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", roles=").append(roles);
-        sb.append(", birth=").append(birthDay);
-        sb.append(", from='").append(countryFrom).append('\'');
-        sb.append('}');
+        final StringBuilder sb = new StringBuilder();
+        sb.append(name);
+        sb.append(roles);
+        sb.append(", birth: ").append(birthDay);
+        sb.append(", ").append(countryFrom);
         return sb.toString();
     }
 }

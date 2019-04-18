@@ -126,20 +126,11 @@ public class Film {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Film{");
-        sb.append("ID=").append(filmID);
-        sb.append(", title='").append(title).append('\'');
-        sb.append(", type=").append(type);
-        sb.append(", dur").append(durationInMinutes);
-        sb.append(", genres=").append(genres);
-        sb.append(", cast=").append(workers);
-        sb.append(", premiere=").append(premiereDate);
-        sb.append(", country='").append(country).append('\'');
-        sb.append(", budget=").append(budget);
-        sb.append(", profit=").append(profit);
-        sb.append(", mpaa=").append(mpaaRating);
-        sb.append(", rating=").append(rating);
-        sb.append('}');
+        final StringBuilder sb = new StringBuilder();
+        sb.append(title);
+        sb.append("(").append(premiereDate.getYear()).append(")");
+        sb.append(", ").append(mpaaRating);
+        sb.append(", rating: ").append(rating);
         return sb.toString();
     }
 }

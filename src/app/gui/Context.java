@@ -14,6 +14,9 @@ public class Context {
     private Person selectedPerson;
     private static volatile Context instance;
     private List<Film> rndFilms;
+    private String toSearch;
+    static final String filmDir = "C:\\Универ\\sem4\\Analysis & Design of UML\\moviexplorer\\src\\resources\\filmPics\\";
+    static final String relativeFilmDir = "resources/filmPics/";
 
     private Context() {
 
@@ -62,5 +65,13 @@ public class Context {
 
     public void setRndFilms(List<Film> rndFilms) {
         this.rndFilms = rndFilms;
+    }
+
+    public String getToSearch() {
+        return toSearch;
+    }
+
+    public void setToSearch(String toSearch) {
+        this.toSearch = toSearch;
     }
 }
