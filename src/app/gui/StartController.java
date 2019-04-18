@@ -30,13 +30,14 @@ public class StartController {
     @FXML
     ScrollPane scrollPane;
     @FXML
-    ImageView view1, view2, view3, view4, view5;
+    ImageView view1, view2, view3, view4, view5, loginPic;
     @FXML
     Label filmName1, filmName2, filmName3, filmName4, filmName5;
 
     ImageView[] listOfImg = new ImageView[]{view1,view2,view3,view4,view5};
 
     private Stage infoStage;
+    private Stage loginStage;
     private Context currentContext;
     private SearchEngine se;
     private FilmService _filmService = new FilmService();
@@ -70,6 +71,9 @@ public class StartController {
         allFilms.get(3).setPic(view4);
         allFilms.get(4).setPic(view5);
 
+        loginPic.setOnMouseEntered(event -> loginPic.setCursor(Cursor.HAND));
+        loginPic.setOnMousePressed(event -> openLoginDialog());
+
         allFilms.forEach(film -> {
             film.getPic().setOnMousePressed(event -> openInfoDialog(film));
             film.getPic().setOnMouseEntered(event -> film.getPic().setCursor(Cursor.HAND));
@@ -92,6 +96,18 @@ public class StartController {
                 e.printStackTrace();
             }
         });
+    }
+
+    private void openLoginDialog() {
+        try {
+            loginStage = new Stage();
+            Parent loginParent = FXMLLoader.load(getClass().getResource("Authorisation.fxml"));
+            loginStage.setScene(new Scene(loginParent));
+            loginStage.setTitle("Login");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        loginStage.showAndWait();
     }
 
     public void doSearch() {

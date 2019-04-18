@@ -4,6 +4,7 @@ import app.dao.repositories.UserRepo;
 import app.entities.User;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class UserService implements Service<User> {
     UserRepo _userRepo = new UserRepo();
@@ -30,6 +31,20 @@ public class UserService implements Service<User> {
     @Override
     public boolean delete(User obj) {
         return _userRepo.delete(obj);
+    }
+
+    public User getByLoginPassword(String login, String pswrd) {
+        for (User user : _userRepo.getAll())
+            if (user.getLogin().equals(login) && user.getPassword().equals(pswrd))
+                return user;
+        return null;
+    }
+
+    public User getByLogin(String login) {
+        for (User user : _userRepo.getAll())
+            if (user.getLogin().equals(login))
+                return user;
+        return null;
     }
 
     @Override

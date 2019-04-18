@@ -17,17 +17,30 @@ public class User {
     private FilmCollection seen;
     private List<FilmCollection> collections;
 
+    public User(String login, String password, LocalDate registerDate) {
+        this.login = login;
+        this.password = password;
+        this.registerDate = registerDate;
+        reviews = new ArrayList<>();
+        friends = new ArrayList<>();
+        this.userID = this.hashCode();
+        likedMovies = new FilmCollection(userID,"likedMovies");
+        watchLater = new FilmCollection(userID,"watchLater");
+        seen = new FilmCollection(userID,"seen");
+        collections = new ArrayList<>();
+
+    }
     public User(long userID, String login, String password, LocalDate registerDate) {
         this.login = login;
         this.password = password;
         this.registerDate = registerDate;
         reviews = new ArrayList<>();
         friends = new ArrayList<>();
+        this.userID = userID;
         likedMovies = new FilmCollection(userID,"likedMovies");
         watchLater = new FilmCollection(userID,"watchLater");
         seen = new FilmCollection(userID,"seen");
         collections = new ArrayList<>();
-        this.userID = this.hashCode();
 
     }
 

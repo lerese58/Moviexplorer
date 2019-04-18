@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -141,21 +140,31 @@
             </AnchorPane>
          </center>
          <top>
-            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <items>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <AnchorPane prefHeight="50.0" prefWidth="589.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../../resources/defaultIcons/movie-icon-11.png" />
-                     </image></ImageView>
-                  <Label text="Moviexplorer">
+                     </image>
+                  </ImageView>
+                  <Label layoutX="54.0" layoutY="3.0" text="Moviexplorer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font name="Comic Sans MS" size="24.0" />
                      </font>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding></Label>
-               </items>
-            </ToolBar>
+                     </padding>
+                  </Label>
+                  <ImageView fx:id="loginPic" fitHeight="40.0" fitWidth="40.0" layoutX="216.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                     <image>
+                        <Image url="@../../resources/defaultIcons/User.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </AnchorPane>
          </top>
       </BorderPane>
    </children>
